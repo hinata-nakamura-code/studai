@@ -1,0 +1,53 @@
+# ───────────────────────────────────────────────
+# Secrets / environment — 絶対にコミットしない
+# ───────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ───────────────────────────────────────────────
+# Node / Next.js (frontend)
+# ───────────────────────────────────────────────
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ───────────────────────────────────────────────
+# Python (backend / spikes)
+# ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ───────────────────────────────────────────────
+# Editor / OS / tooling
+# ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Claude Code — 個人用の設定だけ除外（CLAUDE.md と .claude/settings.json・agents は公開する）
+.claude/settings.local.json
+CLAUDE.local.md
+.claude/worktrees/
+
+# 公開しない個人用のメモ（ローカルにだけ残す）
+docs/private/
