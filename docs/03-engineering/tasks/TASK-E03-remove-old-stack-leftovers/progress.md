@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | chore/TASK-E03-remove-old-stack-leftovers |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/2 |
+| ステータス | 🔵 レビュー待ち |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | |
-| やったこと | |
-| 証跡 | |
-| 判断したこと | |
-| 確認方法と結果 | |
-| 説明のポイント | |
-| 残課題・次にやることの提案 | |
+| 状態 | 完了（PR 作成済み・レビュー待ち。マージはしていない） |
+| やったこと | `.claude/settings.json` から pytest・terraform・tfstate の設定を削除（制限を強める allow の削除は Claude Code、確認・禁止を外す4行は作者）。`CLAUDE.md` の「秘密情報」から tfstate を外した。`docs/04-quality/reviews/README.md` の記入例を `（例）src/xxx.ts:42` にした。`.gitignore` の Python の節の見出しを `(spikes)` にした。TASK-P03 の progress.md をマージ済みの表記にした。ai-usage.md に1項目を追加 |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/2 ／ レビュー記録：`docs/04-quality/reviews/TASK-E03-review.md` |
+| 判断したこと | 下の「判断したこと」を参照（grep で残してよい2行は作者が承認、権限を緩める変更は作者が行う） |
+| 確認方法と結果 | settings.json：PowerShell の ConvertFrom-Json で JSON OK。grep：経緯の記述と残してよい2行だけ（下の「動作確認」）。公開チェック：問題なし（0件）。テスト・lint はまだないため対象外 |
+| 説明のポイント | ① 使わない道具の権限設定を消し、設定ファイルが今の構成を正しく表すようにした ② Claude Code の確認・禁止を外す変更は、AI 自身ではなく作者が行った（AI が自分の制限を外せると、制限の意味がなくなるため）③ 構成がまだ決まっていない箇所の例は「（例）」と明記し、決まった構成だと誤解されないようにした |
+| 残課題・次にやることの提案 | ① Claude Code の権限設定を緩める変更が今後も出るときは、依頼文で「作者が行う」と分けておくと進めやすい ② 範囲外の古い記述は見つからなかった |
 
 ---
 
@@ -39,7 +39,7 @@
 | grep の結果が、経緯の記述と残してよい行だけになっている | ✅ |
 | .claude/settings.json が JSON として正しい | ✅ |
 | レビュー記録（docs/04-quality/reviews/TASK-E03-review.md）がある | ✅ |
-| この progress.md の完了報告欄が埋まっている | ⬜ |
+| この progress.md の完了報告欄が埋まっている | ✅ |
 
 ## 計画（プランモードで決めたこと）
 
@@ -61,6 +61,7 @@
 - 2026-11-25：develop を最新にしてブランチを作成。計画を示して OK をもらった。allow の pytest、CLAUDE.md、reviews/README.md、.gitignore、TASK-P03 の progress.md を直した
 - 2026-11-25：作者が settings.json の4行を消した。JSON の確認と grep を行った
 - 2026-11-25：reviewer サブエージェントで確認（判定：このまま PR にしてよい）。低の指摘3件を直した
+- 2026-11-25：push して PR #2 を作成し、完了報告欄を埋めた
 
 ## 動作確認
 
