@@ -11,7 +11,7 @@
 
 | 役割 | 担当 | やること |
 |---|---|---|
-| PM | claude.ai のプロジェクト | 計画、タスク分解、要件定義・基本設計、技術の解説、Claude Code への依頼文、Notion の更新 |
+| PM | claude.ai のプロジェクト | 計画、タスク分解、要件定義・基本設計・詳細設計、技術の解説、Claude Code への依頼文、Notion の更新 |
 | デザイン | claude.ai のプロジェクト | 画面一覧、画面案、画面仕様 |
 | レビュー | claude.ai のプロジェクト | 設計と PR のレビュー（PR の前には Claude Code の reviewer サブエージェントも確認する） |
 | エンジニア | Claude Code | 実装、テスト、PR の作成、マージ |
@@ -55,7 +55,7 @@
 
 1. 作者：PM の依頼文を Claude Code に渡す
 2. Claude Code：develop を最新にして作業用ブランチを作り、実装する。作業しながら progress.md を書く
-3. Claude Code：reviewer サブエージェントで確認して直し、依頼文で指示されていれば push して develop 宛ての PR を作る（実行は作者が承認する）。progress.md の完了報告欄を埋める
+3. Claude Code：reviewer サブエージェントで確認して直し、依頼文で指示されていれば push して develop 宛ての PR を作る（実行は作者が承認する）。progress.md の完了報告欄を埋め、ステータスと「状態」を「🔵 レビュー待ち（PR #番号）」にする
 4. 作者：レビューのタブに「【レビュー】TASK-〇〇 の PR を見て」と伝える
 5. レビュー：PR と progress.md を確認し、レビュー記録に書く。直しがあれば Claude Code への修正の依頼文を出す（2 に戻る）。OK なら「マージしてOK」と返す
 6. 作者：Claude Code に「マージして」と伝える
