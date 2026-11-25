@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P04-plan |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/3 |
+| ステータス | 🔵 レビュー待ち |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | |
-| やったこと | |
-| 証跡 | |
-| 判断したこと | |
-| 確認方法と結果 | |
-| 説明のポイント | |
-| 残課題・次にやることの提案 | |
+| 状態 | 完了（PR 作成済み・レビュー待ち。マージはしていない） |
+| やったこと | `docs/01-product/plan.md`（PM 作成）を中身を変えずに追加。`docs/README.md` の「計画」を plan.md へのリンクに、`CLAUDE.md` の「プロジェクト概要」で plan.md を案内。`docs/01-product/carry-over.md` の A3・A5・B10 のメモ欄に 2026-11-25 の追記。`docs/ai-usage.md` に TASK-P04 の項目を追加 |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/3 ／ レビュー記録：`docs/04-quality/reviews/TASK-P04-review.md` |
+| 判断したこと | 下の「判断したこと」を参照（plan.md の食い違いは直さずに PM に渡す、carry-over.md は以前のメモを残して追記、ai-usage.md の理由は作者の言葉のまま） |
+| 確認方法と結果 | 公開チェック：問題なし（0件）。git status で、2026-11-20 の下書き（architecture-review.md、adr/）が未追跡のまま残っていることを確認。reviewer サブエージェントの指摘（中2件）を反映。テスト・lint はまだないため対象外 |
+| 説明のポイント | ① 計画は工数・日程を見積もらず、段階と依存関係だけを決めた（作者の判断）② 引き継ぎ事項（carry-over.md）は「決まっていたこと」を書き換えず、メモ欄に日付つきで経緯を足した（以前の決定も残すため）③ PM が作った資料は中身を変えずに入れ、食い違いは指摘として PM に返した（書く担当を分けるため） |
+| 残課題・次にやることの提案 | ① plan.md への指摘（P05 と P15 の依存、図と表のずれ、階層 Todo の書き方、Phase2 のサンプルコード生成、E03 の扱い、段階2の目印）を PM が直す ② carry-over.md C10 のメモにも学習カレンダーを MVP に移した追記が要るか、PM が決める |
 
 ---
 
@@ -36,11 +36,11 @@
 | CLAUDE.md の「プロジェクト概要」が plan.md を案内している | ✅ |
 | carry-over.md の A3・A5・B10 のメモ欄に追記している（「決まっていたこと」は変えない） | ✅ |
 | ai-usage.md に TASK-P04 の項目がある | ✅ |
-| 1〜6 が入った develop 宛ての PR ができている | ⬜ |
+| 1〜6 が入った develop 宛ての PR ができている | ✅ |
 | 公開チェック：問題なし（0件） | ✅ |
 | コミットしないもの（2026-11-20 の下書き）が未追跡のまま残っている | ✅ |
 | レビュー記録（docs/04-quality/reviews/TASK-P04-review.md）がある | ✅ |
-| この progress.md の完了報告欄が埋まっている | ⬜ |
+| この progress.md の完了報告欄が埋まっている | ✅ |
 
 ## 計画（プランモードで決めたこと）
 
@@ -61,6 +61,7 @@
 - 2026-11-25：plan.md を読み、食い違い1件（Phase2 のサンプルコード生成）を指摘。計画を示し、ai-usage.md の理由を作者に確認した
 - 2026-11-25：develop を最新にしてブランチを作成。README.md・CLAUDE.md・carry-over.md・ai-usage.md を直した
 - 2026-11-25：reviewer サブエージェントで確認（判定：中2件を済ませれば PR にしてよい）。レビュー記録を作り、plan.md の指摘6件と carry-over.md C10 は PM に渡すことにした
+- 2026-11-25：push して PR #3 を作成し、完了報告欄を埋めた
 
 ## 動作確認
 

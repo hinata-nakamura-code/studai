@@ -8,7 +8,7 @@
 
 | 重要度 | ファイル:行 | 指摘 | 判断 | 反映 |
 |---|---|---|---|---|
-| 中 | docs/03-engineering/tasks/TASK-P04-plan/progress.md（完了報告・完了条件・動作確認） | 完了報告欄が空で、完了条件の一部が ⬜ のまま | 直す。公開チェックと未追跡の確認は今記入し、完了報告欄は CLAUDE.md の手順8どおり PR の作成後に埋める | このPR |
+| 中 | docs/03-engineering/tasks/TASK-P04-plan/progress.md（完了報告・完了条件・動作確認） | 完了報告欄が空で、完了条件の一部が ⬜ のまま | 直す。公開チェックと未追跡の確認は今記入し、完了報告欄は CLAUDE.md の手順8どおり PR の作成後に埋める | このPR（PR 作成後に記入） |
 | 中 | docs/04-quality/reviews/TASK-P04-review.md | レビュー記録がない | 直す。このファイルを作った | このPR |
 | 低 | docs/01-product/carry-over.md（C10） | 学習カレンダーを MVP に移したが、C10（study_activities）のメモが「2月以降」のままで B10 の追記と食い違う | 直さない。依頼の範囲（A3・A5・B10）の外なので、残課題として PM に渡す | PM |
 
