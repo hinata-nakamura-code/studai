@@ -38,13 +38,14 @@
 | TASK-P03 の progress.md がマージ済みの表記になっている | ✅ |
 | grep の結果が、経緯の記述と残してよい行だけになっている | ✅ |
 | .claude/settings.json が JSON として正しい | ✅ |
+| レビュー記録（docs/04-quality/reviews/TASK-E03-review.md）がある | ✅ |
 | この progress.md の完了報告欄が埋まっている | ⬜ |
 
 ## 計画（プランモードで決めたこと）
 
 - 依頼文の5点を直す。あわせて、このタスクの progress.md、レビュー記録、ai-usage.md の1項目を作る
 - grep の完了条件では、CLAUDE.md:42（「使わない」の一覧）と .gitignore:34（`.pytest_cache/`。Python の節は残す指示）も残ってよい行として扱う（作者が承認）
-- 未コミットの 2026-11-20 の下書き（architecture-review.md、adr/）は grep の対象から外す
+- 未追跡のファイル（2026-11-20 の下書き architecture-review.md・adr/、docs/01-product/plan.md）は grep の対象から外す（plan.md は確認したところ該当なし）
 
 ## 判断したこと
 
@@ -59,12 +60,13 @@
 
 - 2026-11-25：develop を最新にしてブランチを作成。計画を示して OK をもらった。allow の pytest、CLAUDE.md、reviews/README.md、.gitignore、TASK-P03 の progress.md を直した
 - 2026-11-25：作者が settings.json の4行を消した。JSON の確認と grep を行った
+- 2026-11-25：reviewer サブエージェントで確認（判定：このまま PR にしてよい）。低の指摘3件を直した
 
 ## 動作確認
 
 - テスト：対象外（設定とドキュメントだけの変更）
 - 手動確認：settings.json を PowerShell の ConvertFrom-Json で読み込めることを確認（JSON OK）
-- grep（`grep -rniE "pytest|terraform|tfstate|backend"`。docs/private/ と未コミットの 2026-11-20 の下書きは除く）の結果：
+- grep（`grep -rniE "pytest|terraform|tfstate|backend"`。docs/private/ と未追跡のファイル（2026-11-20 の下書き、docs/01-product/plan.md）は除く。plan.md は該当なし）の結果：
   - `.gitignore:34`：`.pytest_cache/`（残してよい行。Python の節は残す）
   - `CLAUDE.md:42`：「使わない」の一覧（残してよい行）
   - `docs/01-product/carry-over.md:121`：F7 の経緯
