@@ -26,7 +26,7 @@ Studai は **PM / デザイン / エンジニア / レビュー** の役割を A
 | 運用ルール | [`rules.md`](rules.md) |
 | 引き継ぎ事項 | [`01-product/carry-over.md`](01-product/carry-over.md) |
 | 要件定義 | 準備中 |
-| 計画 | 準備中 |
+| 計画 | [`01-product/plan.md`](01-product/plan.md) |
 | 画面一覧・画面仕様 | 準備中 |
 | DB設計 | 準備中 |
 | API仕様 | 準備中 |
