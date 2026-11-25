@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P15-process-docs |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中（PR を作ったら「🔵 レビュー待ち（PR #番号）」、マージ前に「✅ 完了（PR #番号 で develop にマージ済み）」に直す） |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/4 |
+| ステータス | 🔵 レビュー待ち（PR #4） |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | |
-| やったこと | |
-| 証跡 | |
-| 判断したこと | |
-| 確認方法と結果 | |
-| 説明のポイント | |
-| 残課題・次にやることの提案 | |
+| 状態 | 🔵 レビュー待ち（PR #4） |
+| やったこと | `docs/rules.md`（1.・5-1・5-2・7.）に、工程ごとの正本の分け方と資料の置き場所、マージ前に progress.md を完了にする手順を入れた。`CLAUDE.md`（仕様の優先順位、手順8・9）、`docs/templates/progress.md`、`docs/README.md` を合わせた。`docs/ai-usage.md` に1項目を追加。作者の追加依頼で `docs/01-product/plan.md`（PM の修正版）と `docs/01-product/carry-over.md` C10 の追記も入れた |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/4 ／ レビュー記録：`docs/04-quality/reviews/TASK-P15-review.md` ／ 差分の要約：下の「差分の要約」 |
+| 判断したこと | 下の「判断したこと」を参照（画面の正本は作者が回答。中間の値「🔵 レビュー待ち」の追加は reviewer の指摘によるもので、依頼文にない） |
+| 確認方法と結果 | rules.md・CLAUDE.md・templates/progress.md で、マージ前の手順の表記と正本の分け方が一致していることを確認（grep と reviewer）。空のフォルダは作っていない。公開チェック：問題なし（0件）。2026-11-20 の下書きは未追跡のまま。テスト・lint はまだないため対象外 |
+| 説明のポイント | ① 正本を「誰が書くか」で工程ごとに分けた（設計は PM が Notion、実装・テストは Claude Code がリポジトリ）。2か所に残しても、どちらが正しいか迷わないようにするため ② 実装は develop に入った承認済みのファイルに従い、Notion と食い違ったら止める（Claude Code が Notion の途中の版で実装しないため）③ progress.md の状態を「進行中 → レビュー待ち → 完了」と手順に組み込み、マージ前に完了にする（「レビュー待ち」のまま残る再発を防ぐため） |
+| 残課題・次にやることの提案 | ① PM が claude.ai 側の rules.md の写しと Notion の図解版を直す ② 5-2 の流れのマージにも 5-1 の手順が当てはまると書き足すか、plan.md の「解説」の列名、H04 の扱いを PM が確認する ③ 「🔵 レビュー待ち」を手順に足したことを PM・作者が確認する |
 
 ---
 
@@ -42,8 +42,8 @@
 | 空のフォルダを作っていない | ✅ |
 | 公開チェック：問題なし（0件） | ✅ |
 | レビュー記録（docs/04-quality/reviews/TASK-P15-review.md）がある | ✅ |
-| 1〜6 が入った develop 宛ての PR ができている | ⬜ |
-| この progress.md の完了報告欄が埋まっている（マージ前に完了にする） | ⬜ |
+| 1〜6 が入った develop 宛ての PR ができている | ✅ |
+| この progress.md の完了報告欄が埋まっている（マージ前に完了にする） | ✅（マージ前に「✅ 完了」に直す） |
 
 ## 計画（プランモードで決めたこと）
 
@@ -78,6 +78,7 @@
 - 2026-11-25：計画を示し、画面の正本の扱いと ai-usage.md の理由を作者に確認した。作者から plan.md（PM の修正版）と carry-over.md C10 の追加依頼を受けた
 - 2026-11-25：develop を最新にしてブランチを作成。plan.md の差分を読み、TASK-P04 のレビュー指摘（B. の6件）が直っていることを確認した。rules.md・CLAUDE.md・templates/progress.md・docs/README.md・carry-over.md・ai-usage.md を直した
 - 2026-11-25：reviewer サブエージェントで確認（判定：中2件を直せば PR にしてよい）。中2件を直し、低2件と H04 の確認は PM に渡すことにした
+- 2026-11-25：push して PR #4 を作成し、完了報告欄を埋めて「🔵 レビュー待ち（PR #4）」にした
 
 ## 動作確認
 
