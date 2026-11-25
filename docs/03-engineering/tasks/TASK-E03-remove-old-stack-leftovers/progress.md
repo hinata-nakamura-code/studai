@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | chore/TASK-E03-remove-old-stack-leftovers |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/2 |
-| ステータス | 🔵 レビュー待ち |
+| ステータス | ✅ 完了（PR #2 で develop にマージ済み・2026-11-25） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 完了（PR 作成済み・レビュー待ち。マージはしていない） |
+| 状態 | ✅ 完了（PR #2 で develop にマージ済み・2026-11-25） |
 | やったこと | `.claude/settings.json` から pytest・terraform・tfstate の設定を削除（制限を強める allow の削除は Claude Code、確認・禁止を外す4行は作者）。`CLAUDE.md` の「秘密情報」から tfstate を外した。`docs/04-quality/reviews/README.md` の記入例を `（例）src/xxx.ts:42` にした。`.gitignore` の Python の節の見出しを `(spikes)` にした。TASK-P03 の progress.md をマージ済みの表記にした。ai-usage.md に1項目を追加 |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/2 ／ レビュー記録：`docs/04-quality/reviews/TASK-E03-review.md` |
 | 判断したこと | 下の「判断したこと」を参照（grep で残してよい2行は作者が承認、権限を緩める変更は作者が行う） |
