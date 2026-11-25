@@ -31,7 +31,7 @@
 
 ## 技術構成（2026-11-20 に決めて引き継いだもの。TASK-H01 で理解し、TASK-P06 で ADR を作り直す）
 - Next.js（App Router）＋TypeScript＋Tailwind CSS＋shadcn/ui。API も Next.js の中に置く（Route Handlers / Server Actions。API サーバーは分けない）
-- 認証：Auth.js（Google ログインのみ）
+- 認証：Better Auth（Google ログインのみ。セッションは JWT 方式で DB に持たない）。2026-11-25 に Auth.js から変更（ADR は TASK-P06）
 - 配信：AWS Amplify Hosting（ap-northeast-1）。main が本番
 - DB：Aurora Serverless v2（PostgreSQL、最小 0 ACU で自動停止、最大 1〜2 ACU）＋RDS Data API。停止からの再開待ち（約15秒）は自動で再試行し、画面に「起動中」を表示する
 - DB アクセスはリポジトリ層で抽象化する。ローカルは docker compose の PostgreSQL 16 に直接接続、本番は Data API 経由
@@ -39,7 +39,7 @@
 - テスト・CI：Vitest、Playwright、GitHub Actions（lint・型チェック・テスト）
 - 監視：CloudWatch（Sentry は必要なら）
 - 秘密情報：本番は Amplify の環境変数、Data API 用は Secrets Manager。.env はローカル専用
-- 使わない：FastAPI（Python）、Lambda、API Gateway、Terraform、SSM パラメータストア、X-Ray、ECS Fargate、Prometheus・Grafana
+- 使わない：Auth.js（NextAuth）、FastAPI（Python）、Lambda、API Gateway、Terraform、SSM パラメータストア、X-Ray、ECS Fargate、Prometheus・Grafana
 
 ## フォルダ構成
 - アプリのコード：まだない（土台を作るタスクで構成を決め、ここを書き換える）
