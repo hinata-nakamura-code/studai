@@ -39,7 +39,7 @@
 - テスト・CI：Vitest、Playwright、GitHub Actions（lint・型チェック・テスト）
 - 監視：CloudWatch（Sentry は必要なら）
 - 秘密情報：本番は Amplify の環境変数、Data API 用は Secrets Manager。.env はローカル専用
-- 使わない：FastAPI（Python）、Lambda、API Gateway、Terraform、SSM パラメータストア、X-Ray、ECS Fargate
+- 使わない：FastAPI（Python）、Lambda、API Gateway、Terraform、SSM パラメータストア、X-Ray、ECS Fargate、Prometheus・Grafana
 
 ## フォルダ構成
 - アプリのコード：まだない（土台を作るタスクで構成を決め、ここを書き換える）
