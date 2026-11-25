@@ -19,7 +19,7 @@
 
 - 役割ごとに別のチャット（タブ）で作業する。チャット同士は会話を共有しないので、決めたことと成果物は必ず Notion かリポジトリに残す
 - デザインとレビューは1タスク1チャット、PM はフェーズごとに新しいチャットにする
-- Notion（タスク一覧・役割別ページ）を書くのは PM だけ
+- Notion（タスク一覧・役割別ページ・工程別ドキュメント）を書くのは PM だけ
 
 ## 2. 意思決定の線引き
 
@@ -59,7 +59,9 @@
 4. 作者：レビューのタブに「【レビュー】TASK-〇〇 の PR を見て」と伝える
 5. レビュー：PR と progress.md を確認し、レビュー記録に書く。直しがあれば Claude Code への修正の依頼文を出す（2 に戻る）。OK なら「マージしてOK」と返す
 6. 作者：Claude Code に「マージして」と伝える
-7. Claude Code：レビュー記録をそのタスクの PR にコミットしてから develop にマージし、作業用ブランチを消して、ローカルの develop を最新にする
+7. Claude Code：次の2つをそのタスクの PR にコミットしてから develop にマージし、作業用ブランチを消して、ローカルの develop を最新にする
+   - レビュー記録
+   - progress.md のステータスと完了報告の「状態」を「✅ 完了（PR #番号 で develop にマージ済み）」にした変更
 8. 作者：PM のタブに「TASK-〇〇 終わった」と伝える
 9. PM：progress.md とレビュー記録を読み、Notion を完了にして「次にやること」を書く
 
@@ -70,6 +72,7 @@
 - 成果物はリポジトリの決まった場所（7. を参照）にファイルとして置く
 - 終わったら作者が PM に伝え、PM が Notion を更新する
 - claude.ai が置いたファイルは、PM の依頼で Claude Code が docs 用の作業用ブランチでコミットし、PR で develop に入れる（いくつかまとめてよい）
+- 設計の資料（要件定義・基本設計・詳細設計）は、PM が Notion の「工程別ドキュメント」に書き、作者が承認してから PM がファイルにして置き、Claude Code にコミットを依頼する
 
 ### 5-3. 作者のタスク
 
@@ -105,19 +108,35 @@
 
 ## 7. 記録（証跡）の置き場所
 
-成果物と記録は、必ずリポジトリのファイルとして残す。Notion には、タスクの状態と記録の場所を書く。
+成果物と記録は、必ずリポジトリのファイルとして残す。工程ごとの資料は Notion とリポジトリの両方に残し、どちらを先に書くか（正本）を工程で分ける。
+
+| 工程 | 正本 | 流れ |
+|---|---|---|
+| 要件定義・基本設計・詳細設計 | Notion の「工程別ドキュメント」 | PM が書き、作者が承認した版を PM がファイルにして、Claude Code がコミットする。実装は承認済みのファイルに従う |
+| 実装・単体テスト・結合テスト | リポジトリのファイル | Claude Code が書く。PM が完了報告を受けて、Notion に要約とリンクを書く |
+
+Notion には、ほかにタスクの状態と記録の場所を書く。
 
 | 記録 | 置き場所 | 書く担当 |
 |---|---|---|
-| 引き継ぎ事項・要件定義・計画 | `docs/01-product/` | PM |
+| 引き継ぎ事項・計画 | `docs/01-product/` | PM |
+| 要件定義 | `docs/01-product/requirements.md` | PM（Notion の承認版） |
+| 基本設計（DB・API・処理の仕組み） | `docs/03-engineering/basic-design/` | PM（Notion の承認版） |
 | 画面一覧・画面仕様 | `docs/02-design/TASK-<ID>-<slug>/` | デザイン |
 | 設計判断（ADR） | `docs/03-engineering/adr/<連番4桁>-<kebab-case>.md`（`adr/README.md` の一覧に追加） | PM・エンジニア |
+| 詳細設計 | `docs/03-engineering/detailed-design/<機能>.md` | PM（Notion の承認版） |
 | タスクの作業記録と完了報告 | `docs/03-engineering/tasks/TASK-<ID>-<slug>/progress.md`（ひな形：`docs/templates/progress.md`） | エンジニア |
 | 使い捨ての検証コード | `docs/03-engineering/spikes/TASK-<ID>-<slug>/` | エンジニア |
+| 単体テスト | テストコードと `docs/04-quality/tests/unit/<機能>.md`（観点と結果） | エンジニア |
+| 結合テスト | テストコードと `docs/04-quality/tests/integration/<シナリオ>.md`（シナリオと結果） | エンジニア |
 | レビュー記録（指摘・判断・反映） | `docs/04-quality/reviews/TASK-<ID>-review.md`（reviewer サブエージェントとレビューの結果を同じファイルに書く） | エンジニア・レビュー |
 | 学習メモ | `docs/learning/` | 作者・PM |
 | AI に任せたこと・作者が判断したこと | `docs/ai-usage.md` | 全員 |
 
+- 画面（`docs/02-design/`）は、デザインが書くファイルが正本。PM が Notion の「02 基本設計」に要約と画面案へのリンクを書く
+- ADR は、ファイルが正本。Notion には一覧とリンクを置く
+- 設計を直すときは Notion を直し、作者が承認したらファイルも出し直す
+- 実装は、develop に入った承認済みのファイルに従う。Notion と食い違っていたら、実装を止めて PM に知らせる
 - Claude Code が作業したタスクは、種類にかかわらず progress.md を書く。完了報告欄を埋めるまで完了にしない
 - ファイル・フォルダ名は kebab-case
 
