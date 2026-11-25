@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P15-process-docs |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/4 |
-| ステータス | 🔵 レビュー待ち（PR #4） |
+| ステータス | ✅ 完了（PR #4 で develop にマージ済み・2026-11-25） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 🔵 レビュー待ち（PR #4） |
+| 状態 | ✅ 完了（PR #4 で develop にマージ済み・2026-11-25） |
 | やったこと | `docs/rules.md`（1.・5-1・5-2・7.）に、工程ごとの正本の分け方と資料の置き場所、マージ前に progress.md を完了にする手順を入れた。`CLAUDE.md`（仕様の優先順位、手順8・9）、`docs/templates/progress.md`、`docs/README.md` を合わせた。`docs/ai-usage.md` に1項目を追加。作者の追加依頼で `docs/01-product/plan.md`（PM の修正版）と `docs/01-product/carry-over.md` C10 の追記も入れた |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/4 ／ レビュー記録：`docs/04-quality/reviews/TASK-P15-review.md` ／ 差分の要約：下の「差分の要約」 |
 | 判断したこと | 下の「判断したこと」を参照（画面の正本は作者が回答。中間の値「🔵 レビュー待ち」の追加は reviewer の指摘によるもので、依頼文にない） |
@@ -43,7 +43,7 @@
 | 公開チェック：問題なし（0件） | ✅ |
 | レビュー記録（docs/04-quality/reviews/TASK-P15-review.md）がある | ✅ |
 | 1〜6 が入った develop 宛ての PR ができている | ✅ |
-| この progress.md の完了報告欄が埋まっている（マージ前に完了にする） | ✅（マージ前に「✅ 完了」に直す） |
+| この progress.md の完了報告欄が埋まっている（マージ前に完了にする） | ✅ |
 
 ## 計画（プランモードで決めたこと）
 
@@ -79,6 +79,7 @@
 - 2026-11-25：develop を最新にしてブランチを作成。plan.md の差分を読み、TASK-P04 のレビュー指摘（B. の6件）が直っていることを確認した。rules.md・CLAUDE.md・templates/progress.md・docs/README.md・carry-over.md・ai-usage.md を直した
 - 2026-11-25：reviewer サブエージェントで確認（判定：中2件を直せば PR にしてよい）。中2件を直し、低2件と H04 の確認は PM に渡すことにした
 - 2026-11-25：push して PR #4 を作成し、完了報告欄を埋めて「🔵 レビュー待ち（PR #4）」にした
+- 2026-11-25：claude.ai【レビュー】の2回目の指摘（低2件：「基本設計」の範囲を DB・API・処理の仕組みと明記、rules.md 5-1 手順9に PM が工程別ドキュメントに要約とリンクを書く手順を追加）を直し、レビュー記録に2回目を追記。マージ前に progress.md を完了にした
 
 ## 動作確認
 
