@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P04-plan |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/3 |
-| ステータス | 🔵 レビュー待ち |
+| ステータス | ✅ 完了（PR #3 で develop にマージ済み・2026-11-25） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 完了（PR 作成済み・レビュー待ち。マージはしていない） |
+| 状態 | ✅ 完了（PR #3 で develop にマージ済み・2026-11-25） |
 | やったこと | `docs/01-product/plan.md`（PM 作成）を中身を変えずに追加。`docs/README.md` の「計画」を plan.md へのリンクに、`CLAUDE.md` の「プロジェクト概要」で plan.md を案内。`docs/01-product/carry-over.md` の A3・A5・B10 のメモ欄に 2026-11-25 の追記。`docs/ai-usage.md` に TASK-P04 の項目を追加 |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/3 ／ レビュー記録：`docs/04-quality/reviews/TASK-P04-review.md` |
 | 判断したこと | 下の「判断したこと」を参照（plan.md の食い違いは直さずに PM に渡す、carry-over.md は以前のメモを残して追記、ai-usage.md の理由は作者の言葉のまま） |
