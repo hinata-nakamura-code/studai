@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P03-rules-update |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/1 |
-| ステータス | 🔵 レビュー待ち |
+| ステータス | ✅ 完了（PR #1 で develop にマージ済み・2026-11-25） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 完了（PR 作成済み・レビュー待ち。マージはしていない） |
+| 状態 | 完了（PR #1 で develop にマージ済み・2026-11-25） |
 | やったこと | GitHub：main を初めて push、develop を作って既定ブランチにし、main と develop を保護（PR 必須・承認0・管理者にも適用・force push と削除を禁止）。リポジトリ：`docs/rules.md` を追加、`CLAUDE.md`・`docs/templates/progress.md` を置き換え、`docs/README.md` を rules.md 中心に整理、`docs/learning/README.md` を追加、`docs/ai-usage.md` に P01〜P03 を追加、`docs/01-product/carry-over.md` を追加、`.claude/agents/reviewer.md` を develop 宛ての運用に合わせた |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/1 ／ レビュー記録：`docs/04-quality/reviews/TASK-P03-review.md` ／ `git diff develop --stat`：10 files changed, 530 insertions(+), 94 deletions(-)（reviewer.md、CLAUDE.md、carry-over.md、progress.md、TASK-P03-review.md、docs/README.md、ai-usage.md、learning/README.md、rules.md、templates/progress.md） |
 | 判断したこと | 下の「判断したこと」を参照（CLAUDE.md の3点と reviewer.md は作者・PM の判断、README の整理と reviewer の指摘への対応は Claude Code の判断） |
