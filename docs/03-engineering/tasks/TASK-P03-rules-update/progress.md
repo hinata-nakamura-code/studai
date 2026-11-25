@@ -21,9 +21,9 @@
 | やったこと | GitHub：main を初めて push、develop を作って既定ブランチにし、main と develop を保護（PR 必須・承認0・管理者にも適用・force push と削除を禁止）。リポジトリ：`docs/rules.md` を追加、`CLAUDE.md`・`docs/templates/progress.md` を置き換え、`docs/README.md` を rules.md 中心に整理、`docs/learning/README.md` を追加、`docs/ai-usage.md` に P01〜P03 を追加、`docs/01-product/carry-over.md` を追加、`.claude/agents/reviewer.md` を develop 宛ての運用に合わせた |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/1 ／ レビュー記録：`docs/04-quality/reviews/TASK-P03-review.md` ／ `git diff develop --stat`：10 files changed, 530 insertions(+), 94 deletions(-)（reviewer.md、CLAUDE.md、carry-over.md、progress.md、TASK-P03-review.md、docs/README.md、ai-usage.md、learning/README.md、rules.md、templates/progress.md） |
 | 判断したこと | 下の「判断したこと」を参照（CLAUDE.md の3点と reviewer.md は作者・PM の判断、README の整理と reviewer の指摘への対応は Claude Code の判断） |
-| 確認方法と結果 | 公開チェック：問題なし（0件）。CLAUDE.md は79行で、13行目の `@docs/rules.md` で読み込む（パスとファイルの存在を確認）。2026-11-20 の下書き3ファイルは未追跡のまま。**`@docs/rules.md` が実際に読み込まれるかは未確認**：このセッションは CLAUDE.md を置き換える前に始まっていて、サブエージェントにも古い CLAUDE.md が渡るため確かめられなかった。新しいセッションで「rules.md の『9. 費用』の目標を、ファイルを読まずに答えて」と聞いて確かめる |
+| 確認方法と結果 | 公開チェック：問題なし（0件）。CLAUDE.md は79行で、13行目の `@docs/rules.md` で読み込む（パスとファイルの存在を確認）。2026-11-20 の下書き3ファイルは未追跡のまま。`@docs/rules.md` の読み込み：確認済み。このセッションは CLAUDE.md を置き換える前に始まっていて確かめられなかったため、作者が新しいセッションで「rules.md の『9. 費用』の目標を、ファイルを読まずに答えて」と聞き、ファイルを開かずに「月600〜1,500円」と返ることを確認した |
 | 説明のポイント | ① ルールの正本を rules.md の1か所にし、CLAUDE.md・docs/README.md からは読み込み・案内だけにした（二重に書くと食い違うため）② main と develop を保護し、承認数は0にした（1人開発なので自分の PR を自分でマージできるようにしつつ、PR を通すことを強制する）③ 仕様の優先順位で、承認済みの要件定義を引き継ぎ事項より上にした（引き継ぎ事項は要件定義の材料のため） |
-| 残課題・次にやることの提案 | ① 新しいセッションで rules.md が読み込まれるか確かめる ② 範囲外の直し（README.md・reviews/README.md の例・settings.json の不要な権限）を小さな docs/chore タスクにする ③ ai-usage.md の P01〜P03 の「理由」を公開してよいか、作者が確認する |
+| 残課題・次にやることの提案 | ① 範囲外の直し（docs/04-quality/reviews/README.md の記入例・.claude/settings.json の不要な権限）を小さな docs/chore タスクにする ② PM が claude.ai 側の rules.md の写しに 5-1 手順3の修正を反映する ③ CI を作るタスクで、ブランチ保護に必須チェックを足す |
 
 ---
 
@@ -34,7 +34,7 @@
 | main と develop が GitHub にあり、既定ブランチが develop | ✅ |
 | main と develop が保護されている（PR 必須・承認0・管理者にも適用・force push と削除を禁止） | ✅ |
 | PR（docs/TASK-P03-rules-update → develop）ができている | ✅ |
-| CLAUDE.md が200行以内で、docs/rules.md を読み込んでいる | ✅（79行・読み込みの行あり。実際の読み込みは新しいセッションで未確認） |
+| CLAUDE.md が200行以内で、docs/rules.md を読み込んでいる | ✅（79行。新しいセッションで読み込まれることを確認） |
 | 公開チェック：問題なし（0件） | ✅ |
 | 2026-11-20 の下書き3ファイルが未コミットのまま残っている | ✅ |
 | progress.md の完了報告欄が埋まっている | ✅ |
@@ -63,6 +63,7 @@
 - 2026-11-25：drafts の3ファイルを読み、3点（作業の順番、仕様の優先順位、技術構成の見出し）を指摘。作者・PM の回答をもとに反映した
 - 2026-11-25：reviewer.md の差分を作者に見せて承認を得て反映。reviewer サブエージェントで確認し、中1件・低1件を直した。push して PR #1 を作成
 - 2026-11-25：claude.ai【レビュー】の2回目の指摘を反映（CLAUDE.md の「使わない」に Prometheus・Grafana を追加、README.md のルールの案内先を docs/rules.md に変更、レビュー記録に2回目を追記）
+- 2026-11-25：作者が新しいセッションで `@docs/rules.md` が読み込まれることを確認した
 
 ## 動作確認
 
@@ -72,5 +73,5 @@
 ## 残課題・次への引き継ぎ
 
 - `docs/03-engineering/adr/README.md` は、TASK-P06 で新しく作る。それまで未追跡の `adr/` を add しない（2026-11-20 の下書きが入ってしまうため）
-- 範囲外の直し（提案）：README.md がルールの置き場所として rules.md を案内していない／`docs/04-quality/reviews/README.md` の記入例に backend 前提のパスが残っている／`.claude/settings.json` に、今の構成で使わないコマンドの権限設定が残っている
-- ai-usage.md の P01〜P03 の項目の「理由」は、作者自身のことを書いた文になっている。公開してよいか作者が確認する（reviewer の指摘。作者が指定した文なので、そのままにした）
+- 範囲外の直し（提案）：`docs/04-quality/reviews/README.md` の記入例に backend 前提のパスが残っている／`.claude/settings.json` に、今の構成で使わないコマンドの権限設定が残っている
+- ai-usage.md の P01〜P03 の項目の「理由」：公開してよいかを claude.ai【レビュー】が確認し、問題なし（2回目のレビュー）
