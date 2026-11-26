@@ -18,6 +18,11 @@ Studai は Claude を役割ごとに分けて開発しています。このフ�
 
 <!-- 1タスク1項目。新しいものを上に追加する -->
 
+### TASK-H01 — 技術構成を理解する（Amplify Hosting・Aurora Serverless v2・Data API）（2026-11-26）
+- AI に任せたこと：Amplify Hosting と Aurora Serverless v2・Data API の解説（仕組み、他の選択肢との違い、費用の目安）、作者のまとめの確認、学習メモのコミット
+- 自分で判断したこと：解説を受けて、自分の言葉でまとめた（学習メモの「作者のまとめ」）。秘密情報の置き場所は TASK-P06、ORM か SQL を直接書くかは TASK-P08 で決める
+- 理由：技術構成は引き継いだ決定なので、自分で説明できるようになってから ADR を作り直すため
+
 ### TASK-P16 — 認証ライブラリの変更（Better Auth）（2026-11-25）
 - AI に任せたこと：Auth.js・Better Auth・Cognito の比較と解説、反映するファイルの洗い出し
 - 自分で判断したこと：認証ライブラリを Better Auth にする／セッションは JWT 方式
