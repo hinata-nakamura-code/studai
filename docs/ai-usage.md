@@ -6,13 +6,13 @@ Studai は Claude を役割ごとに分けて開発しています。このフ�
 
 | 役割 | 担当 | 設定 |
 |------|------|------|
-| PM・デザイナー・レビュー | claude.ai のプロジェクト | 指示文はローカルの docs/private/ に保管（非公開） |
+| PM・デザイナー・レビュー（PR のレビューとマージ） | claude.ai のプロジェクト | 指示文はローカルの docs/private/ に保管（非公開） |
 | エンジニア（実装） | Claude Code | [CLAUDE.md](../CLAUDE.md)、[.claude/settings.json](../.claude/settings.json) |
 | PR 前のレビュー | Claude Code の reviewer サブエージェント | [.claude/agents/reviewer.md](../.claude/agents/reviewer.md) |
 
 - 実装した AI に自分で採点させないよう、レビューは別の文脈（サブエージェント、別のプロジェクト）で行う
 - AI が書いたコードは、自分で説明できるようになってから取り込む
-- 秘密情報の読み取り禁止や push 前の確認は、指示文ではなく権限設定（settings.json）で強制する
+- 秘密情報の読み取り禁止、force push の禁止、マージ前の確認は、指示文ではなく権限設定（settings.json）で強制する
 
 ## 記録
 

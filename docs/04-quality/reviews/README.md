@@ -3,7 +3,7 @@
 タスクごとのレビュー結果と、指摘をどう判断・反映したかを残します。
 
 - ファイル名：`TASK-<ID>-review.md`
-- 書く人：Claude Code の reviewer サブエージェント（PR 前）と、claude.ai プロジェクトの【レビュー】（PR 後）
+- 書く人：reviewer サブエージェントの結果は Claude Code（PR 前）、claude.ai の【レビュー】の結果はレビュー（PR 後）
 
 ## 書き方
 

@@ -15,7 +15,9 @@
       "Edit(.env)",
       "Edit(.env.*)",
       "Edit(!.env.example)",
-      "Read(*.pem)"
+      "Read(*.pem)",
+      "Bash(git push*--force*)",
+      "Bash(git push* -f*)"
     ]
   }
 }
