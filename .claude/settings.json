@@ -5,8 +5,6 @@
       "Bash(npm run *)"
     ],
     "ask": [
-      "Bash(git push *)",
-      "Bash(gh pr create *)",
       "Bash(gh pr merge *)",
       "Bash(aws *)"
     ],
