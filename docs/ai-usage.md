@@ -6,17 +6,22 @@ Studai は Claude を役割ごとに分けて開発しています。このフ�
 
 | 役割 | 担当 | 設定 |
 |------|------|------|
-| PM・デザイナー・レビュー | claude.ai のプロジェクト | 指示文はローカルの docs/private/ に保管（非公開） |
+| PM・デザイナー・レビュー（PR のレビューとマージ） | claude.ai のプロジェクト | 指示文はローカルの docs/private/ に保管（非公開） |
 | エンジニア（実装） | Claude Code | [CLAUDE.md](../CLAUDE.md)、[.claude/settings.json](../.claude/settings.json) |
 | PR 前のレビュー | Claude Code の reviewer サブエージェント | [.claude/agents/reviewer.md](../.claude/agents/reviewer.md) |
 
 - 実装した AI に自分で採点させないよう、レビューは別の文脈（サブエージェント、別のプロジェクト）で行う
 - AI が書いたコードは、自分で説明できるようになってから取り込む
-- 秘密情報の読み取り禁止や push 前の確認は、指示文ではなく権限設定（settings.json）で強制する
+- 秘密情報の読み取り禁止、force push の禁止、マージ前の確認は、指示文ではなく権限設定（settings.json）で強制する
 
 ## 記録
 
 <!-- 1タスク1項目。新しいものを上に追加する -->
+
+### TASK-P17 — push・PR・マージの進め方の変更（2026-11-26）
+- AI に任せたこと：運用ルール（rules.md）と CLAUDE.md の書き換えの下書き（PM）、ファイルの置き換えと、rules.md・CLAUDE.md・reviewer サブエージェントの指示の食い違いの確認（Claude Code）
+- 自分で判断したこと：どの役割も自分のタスクの作業用ブランチへの push と develop 宛ての PR の作成を、作者の承認なしに行ってよい／PR は必ずレビューが確認し、OK を出したレビューがマージする（PR を作った役割は自分でマージしない）／Claude Code の権限設定（settings.json）から push と PR 作成の確認を外し、マージの確認は残す（設定は自分で直した）
+- 理由：push と PR の作成のたびに作者の承認を挟まずに進められるようにしつつ、develop に入る前には必ず別の役割のレビューを通すため
 
 ### TASK-H01 — 技術構成を理解する（Amplify Hosting・Aurora Serverless v2・Data API）（2026-11-26）
 - AI に任せたこと：Amplify Hosting と Aurora Serverless v2・Data API の解説（仕組み、他の選択肢との違い、費用の目安）、作者のまとめの確認、学習メモのコミット
