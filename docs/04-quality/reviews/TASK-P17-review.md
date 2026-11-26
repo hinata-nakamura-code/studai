@@ -43,3 +43,5 @@
 | 低 | rules.md:97, 105 | hotfix の PR とマージの扱いがない | 6. に1行足す | コミット c1067b0 |
 | 低 | ai-usage.md:15、templates/progress.md:6, 10、reviews/README.md:6 | 新しいルールと食い違う古い記述 | この PR で揃える | コミット c1067b0 |
 | 参考 | ai-usage.md:25 | 「理由」は Claude Code が書いた | 作者が確認する | 作者 |
+
+3回目（2026-11-26・eb59392）：allow の3行を確認。マージしてOK
