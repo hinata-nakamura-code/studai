@@ -28,3 +28,18 @@
 - .claude/agents/reviewer.md と新しいルールの間には食い違いなし（PR を作る前に使う、ファイルは変更しない、結果を書くのはエンジニア）
 - 確認できたこと：rules.md・CLAUDE.md が下書きと同じ（`diff --strip-trailing-cr` で差分なし）、settings.json の差分が依頼どおりの2行だけ、未追跡の下書き（architecture-review.md・adr/・requirements.md）がコミットに入っていない、公開してはいけない内容（個人的な事情、勤務先、ローカルのパス、Notion の ID、メールアドレス、秘密情報の値）がない
 - テスト・lint：アプリのコードがまだないため対象外
+
+## 2回目（claude.ai【レビュー】・2026-11-26・PR #7）
+
+判定：直してからマージ。1回目の指摘にはすべて同意。下の表のとおりこの PR で直す。
+
+| 重要度 | ファイル:行 | 指摘 | 判断 | 反映 |
+|---|---|---|---|---|
+| 高 | .claude/settings.json | ask から消しただけでは、通常のモードで push・PR 作成の確認が出続け、ルールの「承認なし」と動きがずれる | allow に push と gh pr create を足し、force push は deny にする（作者承認） | deny はコミット c1067b0。allow の3行は、Claude Code が自分の権限を広げる変更になるため作者が足す（未反映） |
+| 高 | rules.md:16, 62, 71, 104／CLAUDE.md:62 | マージの操作ができるのがレビュー（claude.ai）だけ。claude.ai から書き込めるかは未確認で、書き込めないとマージが止まる | マージを決める役割と操作する役割を分け、書き込めないときは作者の指示で Claude Code が操作する手順を足す。gh pr merge は ask に残す | コミット c1067b0 |
+| 中 | CLAUDE.md:61、rules.md:59 | progress.md を「レビュー待ち」にしたあと、commit・push する手順がない | 手順に足す | コミット c1067b0 |
+| 中 | CLAUDE.md:62 | レビューも同じブランチにコミットするので、pull せずに直すと push が拒否される | 「pull してから直す。force push はしない」と書く | コミット c1067b0 |
+| 中 | rules.md:71 | 「作者が確認してからマージ」では誰がマージするか分からず、104 行目とぶつかる | 新しいレビューのチャットで確認してからマージする、に変える | コミット c1067b0 |
+| 低 | rules.md:97, 105 | hotfix の PR とマージの扱いがない | 6. に1行足す | コミット c1067b0 |
+| 低 | ai-usage.md:15、templates/progress.md:6, 10、reviews/README.md:6 | 新しいルールと食い違う古い記述 | この PR で揃える | コミット c1067b0 |
+| 参考 | ai-usage.md:25 | 「理由」は Claude Code が書いた | 作者が確認する | 作者 |
