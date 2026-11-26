@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P05-requirements |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/8 |
-| ステータス | 🔵 レビュー待ち（PR #8） |
+| ステータス | ✅ 完了（PR #8 で develop にマージ済み） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 🔵 レビュー待ち（PR #8） |
+| 状態 | ✅ 完了（PR #8 で develop にマージ済み） |
 | やったこと | 作者が承認した `docs/01-product/requirements.md`（PM がファイルにしたもの）を中身を変えずにコミットした。`docs/ai-usage.md` の「記録」の先頭に TASK-P05 の項目を追加 |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/8 ／ レビュー記録：`docs/04-quality/reviews/TASK-P05-review.md` |
 | 判断したこと | 要件定義に直したほうがよい点があっても直さず、レビュー記録と残課題に書いた（Notion が正本で、直すときは Notion を直して承認を受けてから出し直す決まりのため）。ai-usage.md の「理由」は依頼文に書かれていないため、要件定義の役割から書いた（作者の確認が要る） |
@@ -56,6 +56,7 @@
 
 - 2026-11-26：develop（df8786d）が origin と同じであることを確認し、ブランチを作成（TASK-P17 と並行して進めるため、別の作業フォルダ（git worktree）で作業）。requirements.md を全文読み、公開チェックをした。ai-usage.md に項目を追加
 - 2026-11-26：reviewer サブエージェントで確認。判定はこのまま PR にしてよい。指摘（中5・低7）は直さずにレビュー記録に書いた。push して develop 宛ての PR #8 を作成し、ステータスを「🔵 レビュー待ち（PR #8）」に更新
+- 2026-11-26：PR #7 のマージ後に develop を取り込み、ai-usage.md のコンフリクトを直した（P05 の項目を一番上に）。3回目のレビューで「マージしてOK」。ステータスを完了にして develop にマージした
 
 ## 動作確認
 
