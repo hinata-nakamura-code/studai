@@ -7,7 +7,7 @@
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-H01-learning-notes |
 | PR | https://github.com/hinata-nakamura-code/studai/pull/6 |
-| ステータス | 🔵 レビュー待ち（PR #6） |
+| ステータス | ✅ 完了（PR #6 で develop にマージ済み） |
 
 ---
 
@@ -17,7 +17,7 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 🔵 レビュー待ち（PR #6） |
+| 状態 | ✅ 完了（PR #6 で develop にマージ済み） |
 | やったこと | `docs/learning/amplify-hosting.md`・`docs/learning/aurora-data-api.md` を中身を変えずにコミット。`docs/learning/README.md` の一覧の2行（PC で入っていたもの）をそのままコミット。`docs/ai-usage.md` の「記録」の先頭に TASK-H01 の項目を追加 |
 | 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/6 ／ レビュー記録：`docs/04-quality/reviews/TASK-H01-review.md` |
 | 判断したこと | 学習メモは作者の記録なので、reviewer の指摘（表記の不揃いなど）があっても直さず、PM への申し送りにした |
@@ -59,6 +59,7 @@
 - 2026-11-26：reviewer サブエージェントで確認。必須の指摘なし。推奨2件・任意1件を progress.md に反映し、学習メモへの指摘は PM への申し送りにした（`docs/04-quality/reviews/TASK-H01-review.md`）
 - 2026-11-26：作者の承認を得て push し、develop 宛ての PR #6 を作成。ステータスを「🔵 レビュー待ち（PR #6）」に更新
 - 2026-11-26：2回目のレビュー（PR #6）の指摘を反映。aurora-data-api.md の再開時間を公式に合わせて訂正（「作者のまとめ」は変えていない）。レビュー記録に2回目を追記し、残課題に再開時間と公開後の費用の2点を足した
+- 2026-11-26：レビューで反映を確認（マージしてOK）。レビュー記録に反映の確認を追記し、ステータスを完了にして develop にマージ
 
 ## 動作確認
 
