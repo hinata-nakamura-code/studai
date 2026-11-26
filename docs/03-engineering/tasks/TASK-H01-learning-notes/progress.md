@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-H01-learning-notes |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/6 |
+| ステータス | 🔵 レビュー待ち（PR #6） |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | （PR を作ったら書く） |
-| やったこと | |
-| 証跡 | |
-| 判断したこと | |
-| 確認方法と結果 | |
-| 説明のポイント | |
-| 残課題・次にやることの提案 | |
+| 状態 | 🔵 レビュー待ち（PR #6） |
+| やったこと | `docs/learning/amplify-hosting.md`・`docs/learning/aurora-data-api.md` を中身を変えずにコミット。`docs/learning/README.md` の一覧の2行（PC で入っていたもの）をそのままコミット。`docs/ai-usage.md` の「記録」の先頭に TASK-H01 の項目を追加 |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/6 ／ レビュー記録：`docs/04-quality/reviews/TASK-H01-review.md` |
+| 判断したこと | 学習メモは作者の記録なので、reviewer の指摘（表記の不揃いなど）があっても直さず、PM への申し送りにした |
+| 確認方法と結果 | 公開チェック：問題なし。`git diff --stat develop` は6ファイルだけ（学習メモ2本・README・ai-usage.md・progress.md・レビュー記録）。README の一覧のリンク先はすべて存在。reviewer：必須の指摘なし。テスト・lint はアプリのコードがまだないため対象外 |
+| 説明のポイント | ① Amplify Hosting は push で自動公開。Next.js 16 は公式の対応表にないため E01 で確かめる ② Aurora Serverless v2 は 0 ACU で止まり、再開待ちはリポジトリ層で再試行する ③ Amplify の SSR は VPC の外なので、Data API と IAM（SSR コンピュートロール）でつなぐ |
+| 残課題・次にやることの提案 | ① 秘密情報の置き場所を TASK-P06 で決め、変えたら CLAUDE.md も直す ② Next.js 16 の動作確認は TASK-E01 で行う ③ コミットしていない `2026-11-20-architecture-review.md` と `adr/` の扱いを P06 で決める |
 
 ---
 
@@ -31,10 +31,10 @@
 
 | 完了条件 | 状態 |
 |----------|------|
-| 学習メモ2本・README・ai-usage.md を入れた develop 宛ての PR ができている | ⬜ |
+| 学習メモ2本・README・ai-usage.md を入れた develop 宛ての PR ができている | ✅（PR #6） |
 | 公開チェックで問題がない | ✅ |
-| reviewer サブエージェントで確認し、結果を `docs/04-quality/reviews/TASK-H01-review.md` に書いている | ⬜ |
-| progress.md の完了報告欄を埋め、ステータスと「状態」を「🔵 レビュー待ち（PR #番号）」にしている | ⬜ |
+| reviewer サブエージェントで確認し、結果を `docs/04-quality/reviews/TASK-H01-review.md` に書いている | ✅ |
+| progress.md の完了報告欄を埋め、ステータスと「状態」を「🔵 レビュー待ち（PR #番号）」にしている | ✅ |
 
 ## 計画（プランモードで決めたこと）
 
@@ -56,6 +56,8 @@
 - 2026-11-26：develop（8afd218）が origin と同じで最新であることを確認し、ブランチを作成
 - 2026-11-26：公開チェック。学習メモ2本と README を全文読み、grep もかけた。ローカルのパス・メールアドレス・Notion の ID・勤務先・個人的な事情・秘密情報の値はなし（「シークレット」「パスワード」は置き場所の説明だけで、値はない）
 - 2026-11-26：ai-usage.md に TASK-H01 の項目を追加
+- 2026-11-26：reviewer サブエージェントで確認。必須の指摘なし。推奨2件・任意1件を progress.md に反映し、学習メモへの指摘は PM への申し送りにした（`docs/04-quality/reviews/TASK-H01-review.md`）
+- 2026-11-26：作者の承認を得て push し、develop 宛ての PR #6 を作成。ステータスを「🔵 レビュー待ち（PR #6）」に更新
 
 ## 動作確認
 
