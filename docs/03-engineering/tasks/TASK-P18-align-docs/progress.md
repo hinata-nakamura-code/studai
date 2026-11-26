@@ -6,8 +6,8 @@
 | 担当 | PM（claude.ai） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P18-align-docs |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/9 |
+| ステータス | 🔵 レビュー待ち（PR #9） |
 
 ---
 
@@ -17,9 +17,9 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | 🟡 進行中 |
+| 状態 | 🔵 レビュー待ち（PR #9） |
 | やったこと | `CLAUDE.md` の「プロジェクト概要」に、公式の過去問からの問題生成（F-09）と章・タスクのひな形（F-04）を足し、要件定義のファイルを参照する1行を足した。`README.md` の紹介文を同じ内容に合わせた。`docs/01-product/plan.md` の段階2・3の表と図から終わったタスク（H01・H05・P05・R01）を外し、P09（回数制限は月の AI 予算から決める、ウェブ検索の料金）・E02（ウェブ検索を含む時間）・P11（バックアップ）・P13（ゲストのデータを消す仕組み、回数制限の数え方、プロンプトインジェクション、退会したときのセッション、戻し方）を直した。段階4に F-03・F-04・F-11・F-15 とプライバシーポリシーを足した。`docs/ai-usage.md` に TASK-P18 の項目を足した |
-| 証跡 | PR（作成後に記入）／レビュー記録：`docs/04-quality/reviews/TASK-P18-review.md`（レビューが作る） |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/9 ／レビュー記録：`docs/04-quality/reviews/TASK-P18-review.md`（レビューが作る） |
 | 判断したこと | `carry-over.md` は 2026-11-21 時点の引き継ぎの記録なので直さない。`docs/templates/progress.md` と `docs/04-quality/reviews/README.md` は TASK-P17 のあとの状態で新しいルールと食い違わないため直さない |
 | 確認方法と結果 | `git diff --stat develop` が CLAUDE.md・README.md・plan.md・ai-usage.md・この progress.md だけ。CLAUDE.md は 200 行以内（80 行）。plan.md の図の依存関係が表と一致することを目で確認。テスト・lint はアプリのコードがまだないため対象外 |
 | 説明のポイント | ① 要件定義を変えたら、実装役が最初に読む CLAUDE.md と計画もそろえる ② 費用の上限（回数制限）は機能から決めるのではなく、月の予算から逆算して決める ③ PM が自分で push して PR を作り、マージはレビューに任せた最初のタスク |
@@ -32,11 +32,12 @@
 | 完了条件 | 状態 |
 |----------|------|
 | CLAUDE.md・README・plan.md が承認済みの要件定義と食い違わない | ✅ |
-| develop 宛ての PR ができている | ⬜ |
+| develop 宛ての PR ができている | ✅（PR #9） |
 
 ## 作業ログ
 
 - 2026-11-26：develop（8f7dc10）から作業用ブランチを作成。CLAUDE.md・README.md・plan.md・ai-usage.md を変更
+- 2026-11-26：push して develop 宛ての PR #9 を作成。ステータスを「🔵 レビュー待ち（PR #9）」に更新
 
 ## 動作確認
 
