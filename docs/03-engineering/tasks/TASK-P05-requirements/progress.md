@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P05-requirements |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/8 |
+| ステータス | 🔵 レビュー待ち（PR #8） |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | （PR を作ったら書く） |
+| 状態 | 🔵 レビュー待ち（PR #8） |
 | やったこと | 作者が承認した `docs/01-product/requirements.md`（PM がファイルにしたもの）を中身を変えずにコミットした。`docs/ai-usage.md` の「記録」の先頭に TASK-P05 の項目を追加 |
-| 証跡 | PR：（作成したら書く） ／ レビュー記録：`docs/04-quality/reviews/TASK-P05-review.md` |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/8 ／ レビュー記録：`docs/04-quality/reviews/TASK-P05-review.md` |
 | 判断したこと | 要件定義に直したほうがよい点があっても直さず、レビュー記録と残課題に書いた（Notion が正本で、直すときは Notion を直して承認を受けてから出し直す決まりのため）。ai-usage.md の「理由」は依頼文に書かれていないため、要件定義の役割から書いた（作者の確認が要る） |
-| 確認方法と結果 | requirements.md を全文読み、公開してはいけない内容がないことを確認。`git diff --stat develop` が依頼の4ファイルだけ。テスト・lint はアプリのコードがまだないため対象外 |
+| 確認方法と結果 | requirements.md を全文読み、公開してはいけない内容がないことを確認。`git diff --stat develop` が requirements.md・ai-usage.md・progress.md・レビュー記録の4ファイルだけ。reviewer サブエージェント：このまま PR にしてよい（指摘は要件定義とほかのファイルについてで、直さずに記録した）。テスト・lint はアプリのコードがまだないため対象外 |
 | 説明のポイント | ① 要件定義の正本は Notion で、承認版をそのままファイルにした（中身を変えない）② 機能ごとに ID（F-01〜F-15）を振り、決めきれないことは担当タスク（P07・P09・P13 など）を書いて残した ③ 過去問と公式サイトの扱い（そのまま載せない・出典を表示する）を著作権の要件として明記した |
-| 残課題・次にやることの提案 | レビュー記録の「食い違い」の表を参照（plan.md・CLAUDE.md・carry-over.md との違い）。直すかどうかは PM が決める |
+| 残課題・次にやることの提案 | ① PM：CLAUDE.md の概要（必要なら README・carry-over）を、ウェブで調べるひな形（F-04）と過去問からの問題生成（F-09(2)）に合わせるか決める ② PM：plan.md 段階4に F-04・F-11・F-15・プライバシーポリシーを足し、P09・E02・P13 の説明を更新する ③ P13 の論点：ゲストのデータを消す仕組み、ゲストの上限の単位、プロンプトインジェクション、退会時のセッション。ai-usage.md の「理由」は作者が確認する |
 
 ---
 
@@ -34,9 +34,9 @@
 | requirements.md が中身を変えずにコミットされている | ✅ |
 | 公開チェック（ローカルのパス・メールアドレス・Notion の ID・勤務先・個人的な事情・秘密情報の値）で問題なし | ✅ |
 | ai-usage.md の「記録」の先頭に TASK-P05 の項目がある | ✅ |
-| reviewer サブエージェントで確認し、レビュー記録に食い違いを書き出している | ⬜ |
-| `git diff --stat develop` が requirements.md・ai-usage.md・progress.md・レビュー記録だけ | ⬜ |
-| develop 宛ての PR ができ、ステータスを「🔵 レビュー待ち（PR #番号）」にしている | ⬜ |
+| reviewer サブエージェントで確認し、レビュー記録に食い違いを書き出している | ✅ |
+| `git diff --stat develop` が requirements.md・ai-usage.md・progress.md・レビュー記録だけ | ✅ |
+| develop 宛ての PR ができ、ステータスを「🔵 レビュー待ち（PR #番号）」にしている | ✅（PR #8） |
 
 ## 計画（依頼文で決まっていたこと）
 
@@ -55,6 +55,7 @@
 ## 作業ログ
 
 - 2026-11-26：develop（df8786d）が origin と同じであることを確認し、ブランチを作成（TASK-P17 と並行して進めるため、別の作業フォルダ（git worktree）で作業）。requirements.md を全文読み、公開チェックをした。ai-usage.md に項目を追加
+- 2026-11-26：reviewer サブエージェントで確認。判定はこのまま PR にしてよい。指摘（中5・低7）は直さずにレビュー記録に書いた。push して develop 宛ての PR #8 を作成し、ステータスを「🔵 レビュー待ち（PR #8）」に更新
 
 ## 動作確認
 
