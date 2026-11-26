@@ -22,3 +22,5 @@
 | Next.js | [nextjs.md](nextjs.md) | TASK-H01 |
 | Node.js を入れる場所（Windows か WSL2 か） | [nodejs-dev-environment.md](nodejs-dev-environment.md) | TASK-H06 |
 | ログインの仕組み（Auth.js・Better Auth・Cognito） | [authentication.md](authentication.md) | TASK-H01 |
+| Amplify Hosting | [amplify-hosting.md](amplify-hosting.md) | TASK-H01 |
+| Aurora Serverless v2・Data API | [aurora-data-api.md](aurora-data-api.md) | TASK-H01 |
