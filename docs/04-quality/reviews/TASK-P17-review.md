@@ -35,7 +35,7 @@
 
 | 重要度 | ファイル:行 | 指摘 | 判断 | 反映 |
 |---|---|---|---|---|
-| 高 | .claude/settings.json | ask から消しただけでは、通常のモードで push・PR 作成の確認が出続け、ルールの「承認なし」と動きがずれる | allow に push と gh pr create を足し、force push は deny にする（作者承認） | deny はコミット c1067b0。allow の3行は、Claude Code が自分の権限を広げる変更になるため作者が足す（未反映） |
+| 高 | .claude/settings.json | ask から消しただけでは、通常のモードで push・PR 作成の確認が出続け、ルールの「承認なし」と動きがずれる | allow に push と gh pr create を足し、force push は deny にする（作者承認） | deny はコミット c1067b0。allow の3行は、Claude Code が自分の権限を広げる変更になるため作者が足した（このPR） |
 | 高 | rules.md:16, 62, 71, 104／CLAUDE.md:62 | マージの操作ができるのがレビュー（claude.ai）だけ。claude.ai から書き込めるかは未確認で、書き込めないとマージが止まる | マージを決める役割と操作する役割を分け、書き込めないときは作者の指示で Claude Code が操作する手順を足す。gh pr merge は ask に残す | コミット c1067b0 |
 | 中 | CLAUDE.md:61、rules.md:59 | progress.md を「レビュー待ち」にしたあと、commit・push する手順がない | 手順に足す | コミット c1067b0 |
 | 中 | CLAUDE.md:62 | レビューも同じブランチにコミットするので、pull せずに直すと push が拒否される | 「pull してから直す。force push はしない」と書く | コミット c1067b0 |

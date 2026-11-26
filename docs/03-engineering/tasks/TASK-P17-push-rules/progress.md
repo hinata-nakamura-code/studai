@@ -56,6 +56,7 @@
 - 2026-11-26：develop（df8786d）が origin と同じであることを確認し、ブランチを作成。settings.json の作者の変更が依頼どおりの2行だけであることを確認。rules.md・CLAUDE.md を置き換え、ai-usage.md に項目を追加
 - 2026-11-26：reviewer サブエージェントで確認。判定はこのまま PR にしてよい。指摘（高2・中5・低4）は直さずにレビュー記録に書いた。push して develop 宛ての PR #7 を作成し、ステータスを「🔵 レビュー待ち（PR #7）」に更新
 - 2026-11-26：2回目のレビュー（claude.ai・PR #7）の指摘を反映（c1067b0）。マージを決める役割と操作する役割を分け、hotfix の扱い、progress.md 更新後の push、修正前の pull を rules.md・CLAUDE.md に足した。settings.json の deny に force push を追加。ai-usage.md の冒頭、ひな形、reviews/README.md を揃えた。settings.json の allow の3行は Claude Code の権限を広げる変更のため作者が足す
+- 2026-11-26：作者が足した settings.json の allow の3行（git push origin・git push -u origin・gh pr create）をコミットして push した
 
 ## 動作確認
 
