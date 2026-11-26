@@ -6,8 +6,8 @@
 | 担当 | Dev - Engineer（Claude Code） |
 | フェーズ | MVP準備 |
 | ブランチ | docs/TASK-P17-push-rules |
-| PR | （作成したら URL を書く） |
-| ステータス | 🟡 進行中 |
+| PR | https://github.com/hinata-nakamura-code/studai/pull/7 |
+| ステータス | 🔵 レビュー待ち（PR #7） |
 
 ---
 
@@ -17,13 +17,13 @@
 
 | 項目 | 内容 |
 |------|------|
-| 状態 | （PR を作ったら書く） |
+| 状態 | 🔵 レビュー待ち（PR #7） |
 | やったこと | `docs/rules.md` と `CLAUDE.md` を PM の下書き（docs/private/drafts/TASK-P17/）で置き換えた（中身は変えていない）。`docs/ai-usage.md` の「記録」の先頭に TASK-P17 の項目を追加。作者が直した `.claude/settings.json`（ask から `git push` と `gh pr create` を消した2行）を同じ PR に含めた |
-| 証跡 | PR：（作成したら書く） ／ レビュー記録：`docs/04-quality/reviews/TASK-P17-review.md` |
+| 証跡 | PR：https://github.com/hinata-nakamura-code/studai/pull/7 ／ レビュー記録：`docs/04-quality/reviews/TASK-P17-review.md` |
 | 判断したこと | 下書きに直したほうがよい点があっても直さず、レビュー記録と残課題に書いた（依頼が「中身は変えない」のため）。ai-usage.md の「理由」は依頼文に書かれていないため、変更の内容から書いた（作者の確認が要る） |
-| 確認方法と結果 | 下書きと置き換えたファイルの差分（改行コードを除く）がないこと。`git diff --stat develop` が依頼の5ファイル＋settings.json だけ。テスト・lint はアプリのコードがまだないため対象外 |
+| 確認方法と結果 | 下書きと置き換えたファイルの差分（改行コードを除く）がないこと。`git diff --stat develop` が rules.md・CLAUDE.md・ai-usage.md・progress.md・レビュー記録＋settings.json だけ。reviewer サブエージェント：このまま PR にしてよい（指摘は下書きとほかのファイルについてで、直さずに記録した）。テスト・lint はアプリのコードがまだないため対象外 |
 | 説明のポイント | ① push・PR の作成は作者の承認なしで行い、マージは OK を出したレビューだけが行う（作った役割は自分でマージしない）② その線引きを指示文だけでなく権限設定でも表し、settings.json の ask に `gh pr merge` を残した ③ progress.md とレビュー記録を書く担当を「PR を作った役割」「レビュー」に変えた |
-| 残課題・次にやることの提案 | レビュー記録の「食い違い」の表を参照（reviewer.md の書き方、ai-usage.md の冒頭、ひな形の記述など）。直すかどうかは PM が決める |
+| 残課題・次にやることの提案 | ① 作者：ask から消しただけで push・PR の作成に確認が出なくなるか、claude.ai からリポジトリに書き込めるかを確かめる（レビュー記録の「高」2件）② PM：progress.md を「レビュー待ち」にしたあとの push、修正前の pull、レビューが作った PR のマージ、main 宛て・hotfix の扱いをルールに足すか決める ③ PM：ai-usage.md の冒頭、progress.md のひな形、reviews/README.md の書く人を新しいルールに合わせるか決める。ai-usage.md の「理由」は作者が確認する |
 
 ---
 
@@ -33,9 +33,9 @@
 |----------|------|
 | rules.md と CLAUDE.md が下書きと同じ中身になっている | ✅ |
 | ai-usage.md の「記録」の先頭に TASK-P17 の項目がある | ✅ |
-| reviewer サブエージェントで確認し、レビュー記録に食い違いを書き出している | ⬜ |
-| `git diff --stat develop` が rules.md・CLAUDE.md・ai-usage.md・progress.md・レビュー記録（＋settings.json）だけ | ⬜ |
-| develop 宛ての PR ができ、ステータスを「🔵 レビュー待ち（PR #番号）」にしている | ⬜ |
+| reviewer サブエージェントで確認し、レビュー記録に食い違いを書き出している | ✅ |
+| `git diff --stat develop` が rules.md・CLAUDE.md・ai-usage.md・progress.md・レビュー記録（＋settings.json）だけ | ✅ |
+| develop 宛ての PR ができ、ステータスを「🔵 レビュー待ち（PR #番号）」にしている | ✅（PR #7） |
 
 ## 計画（依頼文で決まっていたこと）
 
@@ -54,6 +54,7 @@
 ## 作業ログ
 
 - 2026-11-26：develop（df8786d）が origin と同じであることを確認し、ブランチを作成。settings.json の作者の変更が依頼どおりの2行だけであることを確認。rules.md・CLAUDE.md を置き換え、ai-usage.md に項目を追加
+- 2026-11-26：reviewer サブエージェントで確認。判定はこのまま PR にしてよい。指摘（高2・中5・低4）は直さずにレビュー記録に書いた。push して develop 宛ての PR #7 を作成し、ステータスを「🔵 レビュー待ち（PR #7）」に更新
 
 ## 動作確認
 
